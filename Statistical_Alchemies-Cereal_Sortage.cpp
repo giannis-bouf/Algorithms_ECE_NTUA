@@ -21,12 +21,13 @@ position ⌊(K + 1)/2⌋ of the corresponding sorted (in ascending order) sequen
 */
 
 #include <iostream>
+#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
 // Function to check if
 // the median is possible or not.
-bool good(int arr[], int& N, int& K,
+bool good(vector<int> arr, int& N, int& K,
           int& median)
 {
     int pre[N];
@@ -60,7 +61,7 @@ bool good(int arr[], int& N, int& K,
 
 // Function to find the maximum median
 // of a sub array having length at least K
-int maxMedian(int arr[], int N, int K)
+int maxMedian(vector<int> arr, int N, int K)
 {
     // l and r denote the left and right
     // boundary for binary search algorithm
@@ -86,11 +87,14 @@ int maxMedian(int arr[], int N, int K)
 int main()
 {
     int N, K;
-    vector<int> 
-    int arr[] = { 1, 2, 3, 2, 1 };
-    int N = sizeof(arr) / sizeof(arr[0]);
-    int K = 3;
-
+    vector<int> arr;
+    cin >> N >> K;
+    for (int i=0; i<N; i++) {
+          int store;
+          cin >> store;
+          arr.push_back(store);
+    }
+     
     // Function Call
     cout << maxMedian(arr, N, K);
     return 0;
